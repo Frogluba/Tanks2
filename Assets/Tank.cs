@@ -12,6 +12,10 @@ public class Tank : MonoBehaviour
 
     public KeyCode shootKey;
 
+    public GameObject bullet;
+    public Transform ShootPoint;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +35,7 @@ public class Tank : MonoBehaviour
         if (Input.GetKeyDown(shootKey))
         {
             print("SHOOT");
+            Instantiate(bullet,ShootPoint.position, ShootPoint.rotation);
         }
     }
 }
