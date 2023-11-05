@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public GameObject stone;
     public float speed = 20;
     // Start is called before the first frame update
     void Start()
@@ -15,5 +16,10 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         transform.position += transform.forward * speed * Time.deltaTime;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(stone);
     }
 }
