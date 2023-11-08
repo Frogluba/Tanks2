@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.tag == "Boom")
         {
             Destroy(collision.gameObject);
-            for (int i = 0; i < 150; i++)
+            for (int i = 0; i < 200; i++)
             {
                 var offset = Random.insideUnitSphere;
                 Instantiate(particle, transform.position + offset , transform.rotation);
