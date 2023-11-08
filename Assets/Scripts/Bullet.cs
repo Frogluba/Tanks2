@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     
     public float speed = 20;
     public GameObject particle;
+    public GameObject mark;
 
 
     void Start()
@@ -21,6 +22,8 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+       
+
         if (collision.gameObject.tag == "Boom")
         {
             Destroy(collision.gameObject);
@@ -29,6 +32,7 @@ public class Bullet : MonoBehaviour
                 var offset = Random.insideUnitSphere;
                 Instantiate(particle, transform.position + offset , transform.rotation);
             }
+            Instantiate(mark, transform.position, Quaternion.identity);
         }
         Destroy(gameObject);
        
