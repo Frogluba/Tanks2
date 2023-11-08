@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public GameObject stone;
+    
     public float speed = 20;
-    // Start is called before the first frame update
+    public GameObject particle;
+
+
     void Start()
     {
         Destroy(gameObject,2f);
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.position += transform.forward * speed * Time.deltaTime;
@@ -20,6 +21,16 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(stone);
+        if (collision.gameObject.tag == "Boom")
+        {
+            Destroy(collision.gameObject);
+            for (int i = 0; i < 150; i++)
+            {
+                var offset = Random.insideUnitSphere;
+                Instantiate(particle, transform.position + offset , transform.rotation);
+            }
+        }
+        Destroy(gameObject);
+       
     }
 }

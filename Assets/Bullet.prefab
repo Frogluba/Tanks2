@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6621523501366858468}
   - component: {fileID: 5061998397484340523}
   - component: {fileID: 8592380340847669268}
+  - component: {fileID: -8365123237850659070}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -118,5 +119,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1013a7ce5b322ee4f977ae0b5eae52f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stone: {fileID: 0}
   speed: 20
+  particle: {fileID: 7293459728026872769, guid: 214b223fff0fd6641b983b0f54293680, type: 3}
+--- !u!54 &-8365123237850659070
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4062654683241510218}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
