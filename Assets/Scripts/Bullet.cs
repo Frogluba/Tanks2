@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     public float speed = 20;
     public GameObject particle;
     public GameObject mark;
+    public int particleCount;
 
 
     void Start()
@@ -26,13 +27,14 @@ public class Bullet : MonoBehaviour
 
         if (collision.gameObject.tag == "Boom")
         {
-            Destroy(collision.gameObject);
-            for (int i = 0; i < 200; i++)
+            //Destroy(collision.gameObject);
+            for (int i = 0; i < particleCount; i++)
             {
                 var offset = Random.insideUnitSphere;
                 Instantiate(particle, transform.position + offset , transform.rotation);
             }
-            Instantiate(mark, transform.position, Quaternion.identity);
+            collision.gameObject.GetComponent<Health>().Damage();
+            //Instantiate(mark, transform.position, Quaternion.identity);
         }
         Destroy(gameObject);
        

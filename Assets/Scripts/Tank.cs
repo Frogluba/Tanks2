@@ -14,6 +14,7 @@ public class Tank : MonoBehaviour
 
     public GameObject bullet;
     public Transform ShootPoint;
+    public AudioClip shootSound;
 
 
     // Start is called before the first frame update
@@ -37,6 +38,9 @@ public class Tank : MonoBehaviour
         {
             print("SHOOT");
             Instantiate(bullet,ShootPoint.position, ShootPoint.rotation);
+            var source = GetComponent<AudioSource>();
+            source.clip = shootSound;
+            source.Play();
         }
     }
 }

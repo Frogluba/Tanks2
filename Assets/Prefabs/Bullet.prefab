@@ -122,6 +122,7 @@ MonoBehaviour:
   speed: 20
   particle: {fileID: 7293459728026872769, guid: 214b223fff0fd6641b983b0f54293680, type: 3}
   mark: {fileID: 5935807159634812644, guid: 2a59123c00ff03f4293983b3d5f91680, type: 3}
+  particleCount: 4
 --- !u!54 &-8365123237850659070
 Rigidbody:
   m_ObjectHideFlags: 0
